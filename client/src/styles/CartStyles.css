@@ -1,4 +1,6 @@
-
+.cart-page{
+  min-height: 90vh;
+}
 
 .cart-page h1 {
   padding: 15px !important;

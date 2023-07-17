@@ -63,7 +63,7 @@ const CreateProduct = () => {
   };
 
   return (
-    <Layout title={"Dashboard - Create Product"}>
+    <Layout title={"Admin - Thêm sản phẩm"}>
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -74,7 +74,7 @@ const CreateProduct = () => {
             <div className="m-1 w-75">
               <Select
                 bordered={false}
-                placeholder="Select a category"
+                placeholder="Chọn danh mục sản phẩm"
                 size="large"
                 showSearch
                 className="form-select mb-3"
@@ -90,7 +90,7 @@ const CreateProduct = () => {
               </Select>
               <div className="mb-3">
                 <label className="btn btn-outline-secondary col-md-12">
-                  {photo ? photo.name : "Upload Photo"}
+                  {photo ? photo.name : "Chọn ảnh"}
                   <input
                     type="file"
                     name="photo"
@@ -125,7 +125,7 @@ const CreateProduct = () => {
                 <textarea
                   type="text"
                   value={description}
-                  placeholder="write a description"
+                  placeholder="Mô tả sản phẩm"
                   className="form-control"
                   onChange={(e) => setDescription(e.target.value)}
                 />
@@ -135,7 +135,7 @@ const CreateProduct = () => {
                 <input
                   type="number"
                   value={price}
-                  placeholder="write a Price"
+                  placeholder="Giá"
                   className="form-control"
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -144,14 +144,14 @@ const CreateProduct = () => {
                 <input
                   type="number"
                   value={quantity}
-                  placeholder="write a quantity"
+                  placeholder="Số lượng"
                   className="form-control"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
               <div className="mb-3">
                 <button className="btn btn-primary" onClick={handleCreate}>
-                  CREATE PRODUCT
+                  Thêm sản phẩm
                 </button>
               </div>
             </div>

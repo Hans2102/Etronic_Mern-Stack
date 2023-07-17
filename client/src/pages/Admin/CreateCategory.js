@@ -26,7 +26,7 @@ const CreateCategory = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("somthing went wrong in input form");
+      toast.error(error.message);
     }
   };
 
@@ -65,7 +65,7 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error("Somtihing went wrong");
+      toast.error("Something went wrong");
     }
   };
   //delete category
@@ -82,18 +82,18 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error("Somtihing went wrong");
+      toast.error("Somthing went wrong");
     }
   };
   return (
-    <Layout title={"Dashboard - Create Category"}>
+    <Layout title={"Admin - Tạo danh mục"}>
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Manage Category</h1>
+            <h1>Quản lý danh mục sản phẩm</h1>
             <div className="p-3 w-50">
               <CategoryForm
                 handleSubmit={handleSubmit}
@@ -105,8 +105,8 @@ const CreateCategory = () => {
               <table className="table">
                 <thead>
                   <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -123,7 +123,7 @@ const CreateCategory = () => {
                               setSelected(c);
                             }}
                           >
-                            Edit
+                            Sửa
                           </button>
                           <button
                             className="btn btn-danger ms-2"
@@ -131,7 +131,7 @@ const CreateCategory = () => {
                               handleDelete(c._id);
                             }}
                           >
-                            Delete
+                            Xoá
                           </button>
                         </td>
                       </tr>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import Carousel from './Carousel'
 import Footer from './Footer'
 import { Helmet } from 'react-helmet'
 import { Toaster } from 'react-hot-toast';
@@ -18,7 +17,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
             </Helmet>
             <Header />
             <div className='container main-body'>
-                <main style={{ minHeight: "70vh" }}>
+                <main style={{ minHeight: "90vh" }}>
                     <Toaster />
                     {children}
                 </main>

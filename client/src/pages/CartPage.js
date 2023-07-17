@@ -72,14 +72,14 @@ const CartPage = () => {
       localStorage.removeItem("cart");
       setCart([]);
       navigate("/dashboard/user/orders");
-      toast.success("Payment Completed Successfully ");
+      toast.success("Thanh toán thành công ");
     } catch (error) {
       console.log(error);
       setLoading(false);
     }
   };
   return (
-    <Layout>
+    <Layout title={'Giỏ hàng - Etronic'}>
       <div className=" cart-page">
         <div className="row">
           <div className="col-md-12">
@@ -89,8 +89,7 @@ const CartPage = () => {
                 : `Xin chào  ${auth?.token && auth?.user?.name}`}
               <p className="text-center">
                 {cart?.length
-                  ? `${cart.length} Sản phẩm trong giỏ hàng${auth?.token ? "" : "Bạn cần đăng nhập để thanh toán!"
-                  }`
+                  ? `${cart.length} Sản phẩm trong giỏ hàng`
                   : " Giỏ hàng của bạn còn trống"}
               </p>
             </h1>
@@ -130,7 +129,7 @@ const CartPage = () => {
               ))}
             </div>
             <div className="col-md-4 cart-summary">
-              <h2>Tổng kết giỏ hàng</h2>
+              <h2>Tổng Thanh toán</h2>
               <hr />
               <h4>Tổng tiền : {totalPrice()} </h4>
               {auth?.user?.address ? (
@@ -189,7 +188,7 @@ const CartPage = () => {
                       onClick={handlePayment}
                       disabled={loading || !instance || !auth?.user?.address}
                     >
-                      {loading ? "Processing ...." : "Make Payment"}
+                      {loading ? "Processing ...." : "Thanh toán"}
                     </button>
                   </>
                 )}

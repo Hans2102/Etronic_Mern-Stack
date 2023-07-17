@@ -17,7 +17,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
+      const res = await axios.post("/api/v1/auth/register", {
         name,
         email,
         password,
@@ -38,7 +38,7 @@ const Register = () => {
   };
 
   return (
-    <Layout title="Register - Ecommer App">
+    <Layout title="Đăng ký tài khoản - Etronic">
       <div className="form-container">
         <h1 className="mb-3">Đăng ký</h1>
         <form onSubmit={handleSubmit}>

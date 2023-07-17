@@ -41,7 +41,7 @@ const Login = () => {
     }
   };
   return (
-    <Layout title="Register - Ecommer App">
+    <Layout title="Đăng nhập tài khoản - Etronic">
       <div className="form-container">
         <h1 className="mb-3">Đăng nhập</h1>
         <form onSubmit={handleSubmit}>

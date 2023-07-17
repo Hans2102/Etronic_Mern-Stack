@@ -4,6 +4,9 @@ import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
+import "moment/locale/vi";
+
+moment.locale("vi");
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -22,13 +25,13 @@ const Orders = () => {
   }, [auth?.token]);
   return (
     <Layout title={"Your Orders"}>
-      <div className="container-flui p-3 m-3 dashboard">
+      <div className="container-fluid p-3 m-3 dashboard">
         <div className="row">
           <div className="col-md-3">
             <UserMenu />
           </div>
           <div className="col-md-9">
-            <h1 className="text-center">All Orders</h1>
+            <h1 className="text-center">Tất cả đơn hàng</h1>
             {orders?.map((o, i) => {
               return (
                 <div className="border mt-4">
@@ -36,20 +39,18 @@ const Orders = () => {
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Buyer</th>
-                        <th scope="col"> date</th>
-                        <th scope="col">Payment</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Trạng thái</th>
+                        <th scope="col"> Ngày đặt</th>
+                        <th scope="col">Thanh toán</th>
+                        <th scope="col">Số lượng</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>{i + 1}</td>
                         <td>{o?.status}</td>
-                        <td>{o?.buyer?.name}</td>
-                        <td>{moment(o?.createAt).fromNow()}</td>
-                        <td>{o?.payment.success ? "Success" : "Failed"}</td>
+                        <td>{moment(o.createAt).format("LLL")}</td>
+                        <td>{o?.payment.success ? "Thành công" : "Thất bại"}</td>
                         <td>{o?.products?.length}</td>
                       </tr>
                     </tbody>

@@ -111,7 +111,7 @@ const HomePage = () => {
     <>
     <Carousel />
 
-    <Layout title={"ALl Products - Best offers "}>
+    <Layout title={"Etronic - Website bán đồ điện tử giá tốt"}>
 
       
       <div className="container-fluid row body home-page">
@@ -147,11 +147,11 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className="col-md-9">
+        <div className="col-md-10">
           <h1 className="text-center">Tất cả sản phẩm</h1>
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap justify-content-center">
             {products?.map((p) => (
-              <div className="card m-2" style={{ width: "18rem" }}>
+              <div className="card m-2 col-md-3" style={{ width: "15rem" }}>
                 <Link 
                   to={`/product/${p.slug}`}
                   >

@@ -15,9 +15,9 @@ const CategoryProduct = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (params?.slug) getPrductsByCat();
+    if (params?.slug) getProductsByCat();
   }, [params?.slug]);
-  const getPrductsByCat = async () => {
+  const getProductsByCat = async () => {
     try {
       const { data } = await axios.get(
         `/api/v1/product/product-category/${params.slug}`
@@ -34,9 +34,9 @@ const CategoryProduct = () => {
       <div className="container mt-3 category">
         <h4 className="text-center">Danh mục - {category?.name}</h4>
         <h6 className="text-center">{products?.length} Sản phẩm </h6>
-        <div className="row">
-          <div className="col-md-9 offset-1">
-            <div className="d-flex flex-wrap">
+        <div className="row ">
+          <div className="col-md-12">
+            <div className="d-flex flex-wrap justify-content-center">
               {products?.map((p) => (
                 <div className="card m-2" key={p._id}>
                   <Link to={`/product/${p.slug}`}>
@@ -68,7 +68,7 @@ const CategoryProduct = () => {
                         "cart",
                         JSON.stringify([...cart, p])
                       );
-                      toast.success("Item Added to cart");
+                      toast.success("Thêm vào giỏ hàng thành công");
                     }}
                   >
                     Thêm vào giỏ hàng
@@ -87,7 +87,7 @@ const CategoryProduct = () => {
                   setPage(page + 1);
                 }}
               >
-                {loading ? "Loading ..." : "Loadmore"}
+                {loading ? "Loading ..." : "Xem thêm"}
               </button>
             )}
           </div>
