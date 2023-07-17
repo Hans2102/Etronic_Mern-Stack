@@ -10,8 +10,6 @@ import path from 'path'
 
 import { fileURLToPath} from 'url'
 
-import { fileURLToPath} from 'url';
-
 //config env
 dotenv.config()
 
