@@ -15,7 +15,7 @@ const Carousel = () => {
                     <div className="carousel-caption">
                         <h5>Tuần lễ vàng</h5>
                         <p>Điện thoại giá chỉ từ 2.090.000đ</p>
-                        <p><Link to="/category/phone" className="rounded-pill px-4 btn btn-light">Mua ngay</Link></p>
+                        <p><Link to="/category/dien-thoai" className="rounded-pill px-4 btn btn-light">Mua ngay</Link></p>
                     </div>
                 </div>
                 <div className="carousel-item">

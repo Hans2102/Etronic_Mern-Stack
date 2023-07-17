@@ -3,12 +3,12 @@ import mongoose from 'mongoose';
 
 async function connect() {
     try{
-        await mongoose.connect('mongodb://127.0.0.1:27017/Etronics', {
+        const conn = await mongoose.connect(process.env.MONGO_URL, {
             // useNewUrlParser: true,
             // useUnifiedTopology: true,
             // useCreateIndex: true,
         });
-        console.log('successfully connected');   
+        console.log(`connect to database: ${conn.connection.host}`);   
     }catch(error){
         console.log('error connecting'); 
     }
