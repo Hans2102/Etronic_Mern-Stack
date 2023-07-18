@@ -112,7 +112,7 @@ const CartPage = () => {
                   <div className="col-md-4">
                     <p>{p.name}</p>
                     <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price.toLocaleString("vi-VN", {
+                    <p className="card-price">Price : {p.price.toLocaleString("vi-VN", {
                       style: "currency",
                       currency: "VND",
                     })}</p>

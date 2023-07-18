@@ -7,6 +7,7 @@ import { Prices } from "../components/Prices";
 import { useCart } from "../context/cart";
 import toast from "react-hot-toast";
 import "../styles/Carousel.css";
+import "../styles/HomePage.css";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Layout/Carousel";
 
@@ -151,7 +152,7 @@ const HomePage = () => {
           <h1 className="text-center">Tất cả sản phẩm</h1>
           <div className="d-flex flex-wrap justify-content-center">
             {products?.map((p) => (
-              <div className="card m-2 col-md-3" style={{ width: "15rem" }}>
+              <div className="card m-2 col-md-3" style={{ width: "12rem" }}>
                 <Link 
                   to={`/product/${p.slug}`}
                   >
@@ -166,7 +167,7 @@ const HomePage = () => {
                   <p className="card-text">
                     {p.description.substring(0, 30)}...
                   </p>
-                  <p className="card-text">{p.price.toLocaleString("vi-VN", {
+                  <p className="card-price">{p.price.toLocaleString("vi-VN", {
                     style: "currency",
                     currency: "VND"
                   })}

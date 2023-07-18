@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { Helmet } from 'react-helmet'
 import { Toaster } from 'react-hot-toast';
+import "../../index.css"
 
 
 const Layout = ({ children, title, description, keywords, author }) => {
@@ -15,12 +16,14 @@ const Layout = ({ children, title, description, keywords, author }) => {
                 <meta name="author" content={author} />
                 <title>{title}</title>
             </Helmet>
-            <Header />
-            <div className='container main-body'>
-                <main style={{ minHeight: "90vh" }}>
-                    <Toaster />
-                    {children}
-                </main>
+            <div className='wrap-container'>
+                <Header />
+                <div className='container main-body'>
+                    <main style={{ minHeight: "90vh" }}>
+                        <Toaster />
+                        {children}
+                    </main>
+                </div>
             </div>
             <Footer />
         </div>

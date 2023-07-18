@@ -32,7 +32,7 @@ const Search = () => {
                   <p className="card-text">
                     {p.description.substring(0, 30)}...
                   </p>
-                  <p className="card-text"> {p.price.toLocaleString("vi-VN", {
+                  <p className="card-price"> {p.price.toLocaleString("vi-VN", {
                     style: "currency",
                     currency: "VND",
                   })}</p>

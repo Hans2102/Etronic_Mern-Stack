@@ -1,5 +1,4 @@
-/* ===================================
-========= register page  */
+
 .form-container {
   margin-top: -100px;
   display: flex;
@@ -10,7 +9,7 @@
 }
 
 .form-container form {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow:  0px 8px 16px rgba(0, 0, 0, 0.35);
   padding: 30px;
   background-color: #fff;
 }
